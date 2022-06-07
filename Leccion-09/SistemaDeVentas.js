@@ -24,7 +24,7 @@ class Producto{
         this._precio = precio;
     }
     toString(){
-        return `                ID Producto: ${this._idProducto}.
+        return `               ID Producto: ${this._idProducto}.
                 Nombre: ${this._nombre}.
                 Precio: $${this._precio}.\n` ;
     }
@@ -67,8 +67,8 @@ class Orden {
             productosOrden += producto.toString() + ' ';
         }
         console.log(`Orden: ${this._idOrden}.
-                Total: ${this.calcularTotal()}
-                Productos: \n${productosOrden}`);
+                    Productos: \n${productosOrden}
+                Total: ${this.calcularTotal()}`);
     }
 
 }   
@@ -80,11 +80,15 @@ let producto5 = new Producto('Remera', 2000);
 
 
 let orden1 = new Orden();
+let orden2 = new Orden();
 orden1.agregarProducto(producto1);
 orden1.agregarProducto(producto2);
 orden1.agregarProducto(producto3);
 orden1.agregarProducto(producto4);
 orden1.agregarProducto(producto5);
-
-
 orden1.mostrarOrden();
+
+orden2.agregarProducto(producto3);
+orden2.agregarProducto(producto4);
+orden2.agregarProducto(producto5);
+orden2.mostrarOrden();
