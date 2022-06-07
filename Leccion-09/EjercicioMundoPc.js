@@ -41,9 +41,10 @@ class Raton extends DispositivoEntrada{
 
 }
 
-let raton1 = new Raton('Mouse', 'Razer');
+let raton1 = new Raton('USB', 'Razer');
 console.log(raton1.toString());
-let raton2 = new Raton('Mouse', 'Logitech');
+let raton2 = new Raton('Bluetooth', 'Logitech');
+console.log(raton2.toString());
 
 class Teclado extends DispositivoEntrada{
     static contadorTeclados = 0;
@@ -65,9 +66,9 @@ class Teclado extends DispositivoEntrada{
     }
 }
 
-let teclado1 = new Teclado('Teclado', 'Razer');
+let teclado1 = new Teclado('USB', 'Razer');
 console.log(teclado1.toString());
-let teclado2 = new Teclado('Teclado', 'HyperX');
+let teclado2 = new Teclado('USB', 'HyperX');
 
 class Monitor{
     
@@ -165,6 +166,7 @@ class Computadora{
 let computadora1 = new Computadora('Jarvis', monitor1, teclado1, raton1);
 console.log(computadora1.toString());
 let computadora2 = new Computadora('Friday', monitor2, teclado2, raton2);
+let computadora3 = new Computadora('Ultron', monitor1, teclado1, raton1);
 
 class Orden{
 
@@ -175,6 +177,10 @@ class Orden{
         this._computadora = [];
     }
 
+    get idOrden(){
+        return this._idOrden;
+    }
+
     agregarComputadora(computadora){
         this._computadora.push(computadora);
     }
@@ -182,7 +188,7 @@ class Orden{
     mostrarOrden(){
         let computadorasOrden = '';
         for(let computadoras of this._computadora){
-            computadorasOrden += computadoras.toString() + ' ';
+            computadorasOrden += `\n ${computadoras}`;
         }
         console.log(`
                 ID Orden: ${this._idOrden}.
@@ -194,4 +200,5 @@ class Orden{
 let orden1 = new Orden();
 orden1.agregarComputadora(computadora1);
 orden1.agregarComputadora(computadora2);
+orden1.agregarComputadora(computadora3);
 orden1.mostrarOrden();
