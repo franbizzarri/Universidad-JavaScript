@@ -24,16 +24,13 @@ class Producto{
         this._precio = precio;
     }
     toString(){
-        return `ID Producto: ${this._idProducto}.
+        return `                ID Producto: ${this._idProducto}.
                 Nombre: ${this._nombre}.
-                Precio: $${this._precio}.`;
+                Precio: $${this._precio}.\n` ;
     }
 }
 
-let producto1 = new Producto('Pantalon', 5000);
-let producto2 = new Producto('Camisa', 2500);
-console.log(producto1.toString());
-console.log(producto2.toString());
+
 
 class Orden {
     static contadorOrdenes = 0;
@@ -45,7 +42,7 @@ class Orden {
         this._idOrden = ++Orden.contadorOrdenes;
         this._productosAgregados = ++Orden.contadorProductosAgregados;
         this._productos = [];
-        this._contadorProductosAgregados = 0;
+        //this._contadorProductosAgregados = 0;
     }
 
     get idOrden(){
@@ -53,29 +50,41 @@ class Orden {
     }
 
     agregarProducto(producto){
-        if(this._productos.length < Orden.MAX_PRODUCTOS){
-            this._productos.push(producto);
-        }
-        else{
-            console.log('No se pueden agregar más productos.');
-        }
+        this._productos.length < Orden.MAX_PRODUCTOS ? this._productos.push(producto) : console.log('No se pueden agregar más productos.');
     }
+    
 
     calcularTotal(){
         let totalVenta = 0;
         for(let producto of this._productos){
             totalVenta += producto.precio;
         }
+        return totalVenta;
     }
-
     mostrarOrden(){
         let productosOrden = '';
         for(let producto of this._productos){
             productosOrden += producto.toString() + ' ';
         }
         console.log(`Orden: ${this._idOrden}.
-                    Total: ${this.calcularTotal()}
-                    Productos: ${this.productosOrden}`);
+                Total: ${this.calcularTotal()}
+                Productos: \n${productosOrden}`);
     }
-    
-}
+
+}   
+let producto1 = new Producto('Pantalon', 5000); 
+let producto2 = new Producto('Camisa', 2500);   
+let producto3 = new Producto('Zapatos', 3500);
+let producto4 = new Producto('Cinturon', 1700);
+let producto5 = new Producto('Remera', 2000);
+
+
+let orden1 = new Orden();
+orden1.agregarProducto(producto1);
+orden1.agregarProducto(producto2);
+orden1.agregarProducto(producto3);
+orden1.agregarProducto(producto4);
+orden1.agregarProducto(producto5);
+
+
+orden1.mostrarOrden();
