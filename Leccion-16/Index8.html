@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos en HTML con JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de Eventos en HTML con JavaScript</h1>
+    Nombre: <input type="text" id="nombre">
+    <br><br>
+    Apellido: <input type="text" id="apellido">
+    
+    <script>
+        document.getElementById('nombre').addEventListener('focus', cambiar);
+        document.getElementById('nombre').addEventListener('blur', regresar);
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
+        function cambiar(evento){
+            evento.target.style.background = 'yellow';
+        }
+        function regresar(evento){
+            evento.target.style.background = 'white';
+        }
+    </script>
+</body>
+</html>
