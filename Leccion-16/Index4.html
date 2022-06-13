@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Evento Onload con JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de Evento onchange en HTML con JavaScript</h1>
+    <br>
+    Nombre: <input type="text" onchange="convertir(this)">
+    <script>
+        function convertir(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>
