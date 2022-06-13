@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Asociar Eventos en HTML con JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de Eventos en HTML con JavaScript</h1>
+    <br>
+    <div id="mostrar"></div>
+    <script>
+        document.getElementById('titulo').onclick = cambiarTexto;
+
+        function cambiarTexto(){
+            document.getElementById('titulo').innerHTML = 'Nuevo Titulo';
+            document.getElementById('mostrar').innerHTML = 'Nuevo contenido';
+        }
+    </script>
+</body>
+</html>
