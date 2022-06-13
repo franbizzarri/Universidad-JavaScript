@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos en HTML con JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo de Eventos en HTML con JavaScript</h1>
+    
+    <form action="" id="formulario">
+        Nombre: <input type="text" id="nombre">
+        <br><br>
+        Apellido: <input type="text" id="apellido">
+    </form>
+
+    <script>
+        const form = document.getElementById('formulario');
+
+        form.addEventListener('focus', (evento)=>{ evento.target.style.background = 'orange' }, true); //AL USAR TRUE SE DENOMINA DELEGACION DE EVENTOS Y SE PROPAGA EL EVENTO A TODO EL FORMULARIO
+        form.addEventListener('blur', (evento) => { evento.target.style.background = 'white' }, true);
+
+
+    </script>
+</body>
+</html>
