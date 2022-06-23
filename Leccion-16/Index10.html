@@ -15,8 +15,8 @@
     <script>
         const form = document.getElementById('formulario');
 
-        form.addEventListener('focus', (evento)=>{ evento.target.style.background = 'orange' }, true); //AL USAR TRUE SE DENOMINA DELEGACION DE EVENTOS Y SE PROPAGA EL EVENTO A TODO EL FORMULARIO
-        form.addEventListener('blur', (evento) => { evento.target.style.background = 'white' }, true);
+        form.addEventListener('focus', evento => { evento.target.style.background = 'orange' }, true); //AL USAR TRUE SE DENOMINA DELEGACION DE EVENTOS Y SE PROPAGA EL EVENTO A TODO EL FORMULARIO
+        form.addEventListener('blur', evento => { evento.target.style.background = 'white' }, true);
 
 
     </script>

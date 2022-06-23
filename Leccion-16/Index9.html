@@ -12,8 +12,8 @@
     <script>
         // EVENTOS CON FUNCIONES FLECHA
         //! NO SE PUEDEN REUTILIZAR DEBIDO A QUE SON FUNCIONES FLECHA
-        document.getElementById('nombre').addEventListener('focus', (evento)=>{ evento.target.style.background = 'orange' });
-        document.getElementById('nombre').addEventListener('blur', (evento) => { evento.target.style.background = 'white' });
+        document.getElementById('nombre').addEventListener('focus', evento => { evento.target.style.background = 'orange' });
+        document.getElementById('nombre').addEventListener('blur', evento => { evento.target.style.background = 'white' });
         document.getElementById('apellido').addEventListener('focus', cambiar);
         document.getElementById('apellido').addEventListener('blur', regresar);
         function cambiar(evento){
